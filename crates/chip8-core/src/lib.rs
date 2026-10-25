@@ -1,5 +1,7 @@
 //! The CHIP-8 emulator core. Knows nothing about windows, keyboards, or files.
 
+pub mod opcode;
+
 /// Width of the CHIP-8 display in pixels.
 pub const DISPLAY_WIDTH: usize = 64;
 
@@ -25,6 +27,6 @@ mod tests {
     }
     #[test]
     fn program_start_is_inside_memory() {
-        assert!(PROGRAM_START < MEMORY_SIZE);
+        const { assert!(PROGRAM_START < MEMORY_SIZE) };
     }
 }
